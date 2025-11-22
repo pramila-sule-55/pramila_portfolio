@@ -146,245 +146,216 @@
           <span class="street-tag">Graffiti Inspired</span>
         </div>
       </div>
-      
-      <div class="projects-grid">
-        <!-- Project 1 -->
-          <!-- Project 4 - Added AgriHub Platform -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="image.png" alt="AgriHub Platform">
-          </div>
-          <div class="project-content">
-            <h3>Zippy Crafts</h3>
-            <p>Zippy Crafts is an e-commerce platform dedicated to showcasing and selling unique, handmade products crafted by talented artisans.
-It connects creators with customers who value originality, tradition, and craftsmanship.
-From home décor to personalized gifts, every item tells a story of creativity and care.</p>
-            <a href="#" class="project-link" onclick="openProject('project4')">View Project <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
+<!-- ==========================
+  PROJECTS SECTION (HTML)
+  Sequence: 1→6 (Smart Health ... Career App)
+========================== -->
+<section id="projects" class="section projects-section">
+  <h2 class="section-title">Projects</h2>
 
-        <!-- Project 2 -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="lpg.jpg" alt="SmartGas Guardian">
-          </div>
-          <div class="project-content">
-            <h3>SmartGas Guardian</h3>
-            <p>SmartGas Guardian is an IoT-based safety device designed to detect LPG gas leaks and fire hazards in homes and industries.
-It continuously monitors the environment for dangerous gas levels and sudden temperature spikes.
-Upon detecting a threat, it automatically shuts off the gas valve and sends instant alerts via SMS and mobile app.</p>
-            <a href="#" class="project-link" onclick="openProject('project2')">View Project <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="market.jpg" alt="Maker's Marketplace">
-          </div>
-          <div class="project-content">
-            <h3>Maker's Marketplace</h3>
-            <p>Maker's Marketplace is an e-commerce platform that empowers local artisans and small-scale producers to showcase and sell handmade, locally sourced products. It connects creators with global customers, promoting cultural exchange and sustainable economic growth.</p>
-            <a href="#" class="project-link" onclick="openProject('project1')">View Project <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        
-        
-        
-        <!-- Project 3 -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="career.png" alt="Career Guidance Web App">
-          </div>
-          <div class="project-content">
-            <h3>Career Guidance Web App</h3>
-            <p>AI-powered platform offering career suggestions and mentorship. Built using Node.js, Express, MongoDB with editable profile and analytics in an urban style.</p>
-            <a href="#" class="project-link" onclick="openProject('project3')">View Project <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-        
-       
-      </div>
-    </div>
-  </section>
+  <div class="projects-grid">
 
-  <!-- Project Detail Modals -->
-  
-  <!-- Project 1 Modal -->
-  <div id="project1" class="project-modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeModal('project1')">&times;</span>
-      <div class="modal-header">
-        <h2>Maker's Marketplace</h2>
-        <p>An e-commerce platform designed to empower local artisans with street art-inspired design</p>
-        <div class="tags">
-          <span class="street-tag">E-commerce</span>
-          <span class="street-tag">Urban Design</span>
-          <span class="street-tag">Community</span>
-        </div>
+    <!-- 1 Smart Health Card System -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="Screenshot 2025-10-12 143417.png" alt="Smart Health Card">
       </div>
-      <div class="modal-body">
-        <div class="modal-section">
-          <h3>Introduction</h3>
-          <p>Maker's Marketplace is a vibrant e-commerce platform that connects artisans with buyers who appreciate handcrafted goods. Designed with an urban, street art aesthetic, the platform features secure user authentication, product management tools for sellers, and a seamless shopping experience.</p>
-          <p>The project combines functionality with artistic expression, featuring graffiti-inspired elements and a color palette that reflects the creativity of the artisan community. The platform includes real-time inventory tracking, seller analytics dashboards, and integrated payment processing.</p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Technology Stack</h3>
-          <div class="tech-stack">
-            <div class="tech-item">React.js</div>
-            <div class="tech-item">Firebase</div>
-            <div class="tech-item">Firestore</div>
-            <div class="tech-item">Netlify</div>
-          </div>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Project Gallery</h3>
-          <div class="gallery">
-            <img src="market.jpg" alt="Maker's Marketplace">
-            <img src="market2.jpg" alt="Product Page">
-            <img src="list.jpg" alt="Dashboard">
-            <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Checkout">
-          </div>
-        </div>
-        
-        
-        
-        <div class="modal-section">
-          <h3>Project Links</h3>
-          <div class="project-links">
-            <a href="https://github.com/Pratiksha091920/MakersMarketPlace" class="project-btn"><i class="fab fa-github"></i> GitHub Repository</a>
-      
-          </div>
-        </div>
+      <div class="project-content">
+        <h3>Smart Health Card System</h3>
+        <p>Secure digital patient history management with QR/Smart Card for instant access and emergency use.</p>
+        <a href="#" class="project-link" onclick="openProject('project1')">View Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <!-- 2 TruthCheck -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="Screenshot 2025-11-22 151909.png" alt="TruthCheck">
+      </div>
+      <div class="project-content">
+        <h3>TruthCheck – AI Fake News Detector</h3>
+        <p>ML + NLP pipeline to detect misinformation, provide credibility scores and source checks.</p>
+        <a href="#" class="project-link" onclick="openProject('project2')">View Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <!-- 3 Zippy Crafts -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="image.png" alt="Zippy Crafts">
+      </div>
+      <div class="project-content">
+        <h3>Zippy Crafts</h3>
+        <p>Marketplace for handmade goods connecting artisans to customers with vendor dashboards.</p>
+        <a href="#" class="project-link" onclick="openProject('project3')">View Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <!-- 4 SmartGas Guardian -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="lpg.jpg" alt="SmartGas Guardian">
+      </div>
+      <div class="project-content">
+        <h3>SmartGas Guardian</h3>
+        <p>IoT system for LPG leak & fire detection with auto shutoff and mobile alerts.</p>
+        <a href="#" class="project-link" onclick="openProject('project4')">View Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <!-- 5 Maker's Marketplace -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="market.jpg" alt="Maker's Marketplace">
+      </div>
+      <div class="project-content">
+        <h3>Maker's Marketplace</h3>
+        <p>E-commerce platform for local artisans with product management & secure checkout.</p>
+        <a href="#" class="project-link" onclick="openProject('project5')">View Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <!-- 6 Career Guidance Web App -->
+    <article class="project-card">
+      <div class="project-image">
+        <img src="career.png" alt="Career Guidance Web App">
+      </div>
+      <div class="project-content">
+        <h3>Career Guidance Web App</h3>
+        <p>AI-driven recommendations, mentor matching and student progress analytics.</p>
+        <a href="#" class="project-link" onclick="openProject('project6')">View Project <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ==========================
+  MODALS (one per project) — add the modal HTML for each project
+========================== -->
+
+<!-- Modal Template: Project 1 -->
+<div id="project1" class="project-modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-modal" onclick="closeModal('project1')" aria-label="Close">&times;</button>
+
+    <div class="modal-header">
+      <h2>Smart Health Card System</h2>
+      <p>Secure digital patient history management with QR/Smart Card for instant access and emergency use.</p>
+      <div class="tags">
+        <span class="street-tag">Smart Health</span>
+        <span class="street-tag">Digital Card</span>
+        <span class="street-tag">Healthcare</span>
       </div>
     </div>
-  </div>
-  
-  <!-- Project 2 Modal -->
-  <div id="project2" class="project-modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeModal('project2')">&times;</span>
-      <div class="modal-header">
-        <h2>SmartGas Guardian</h2>
-        <p>An IoT-based safety solution with urban design aesthetics</p>
-        <div class="tags">
-          <span class="street-tag">IoT</span>
-          <span class="street-tag">Safety</span>
-          <span class="street-tag">Hardware</span>
+
+    <div class="modal-body">
+      <div class="modal-section">
+        <h3>Introduction</h3>
+        <p>
+          Smart Health Card System stores & manages a patient’s medical history (prescriptions, reports, allergies) using a secure
+          QR/Smart Card. Hospitals can scan the code to retrieve accurate records instantly—improving emergency response and reducing paperwork.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h3>Technology Stack</h3>
+        <div class="tech-stack">
+          <div class="tech-item">HTML</div>
+          <div class="tech-item">CSS</div>
+          <div class="tech-item">JavaScript</div>
+          <div class="tech-item">QR Code API</div>
+          <div class="tech-item">Firebase</div>
+          <div class="tech-item">Netlify</div>
         </div>
       </div>
-      <div class="modal-body">
-        <div class="modal-section">
-          <h3>Introduction</h3>
-          <p>SmartGas Guardian is a life-saving IoT device designed for home and industrial safety with an urban, street-inspired design language. It continuously monitors for dangerous levels of combustible gases and rapid temperature increases that may indicate a fire.</p>
-          <p>When a threat is detected, the system automatically shuts off the main gas supply valve and sends immediate alerts to homeowners via SMS and mobile app notifications. The project features a custom-designed enclosure with graffiti-inspired artwork, making safety technology visually appealing.</p>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Technology Stack</h3>
-          <div class="tech-stack">
-            <div class="tech-item">Arduino</div>
-            <div class="tech-item">MQ-2 Gas Sensor</div>
-            <div class="tech-item">Flame Sensor</div>
-            <div class="tech-item">SIM800L GSM Module</div>
-            <div class="tech-item">Python</div>
-            <div class="tech-item">Firebase</div>
-            <div class="tech-item">React Native</div>
-            <div class="tech-item">Raspberry Pi</div>
-            <div class="tech-item">IoT Protocols</div>
-          </div>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Project Gallery</h3>
-          <div class="gallery">
-              <img src="lpg.jpg" alt="Sensor Detail">
-            <img src="WhatsApp Image 2025-07-27 at 20.05.16_58cef4a3.jpg" alt="Sensor Detail">
-            <img src="WhatsApp Image 2025-07-27 at 20.05.15_777f87ce.jpg" alt="Circuit Design">
-            <img src="WhatsApp Image 2025-07-27 at 20.05.16_0ad4f791.jpg" alt="Mobile App">
-          </div>
-        </div>
-        
-        
-            
-        
-        <div class="modal-section">
-          <h3>Project Links</h3>
-          <div class="project-links">
-            
-            <a href="iot.pdf" class="project-btn"><i class="fas fa-file-pdf"></i> Documentation</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Project 3 Modal -->
-  <div id="project3" class="project-modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeModal('project3')">&times;</span>
-      <div class="modal-header">
-        <h2>Career Guidance Web App</h2>
-        <p>AI-powered career platform with street art design elements</p>
-        <div class="tags">
-          <span class="street-tag">AI</span>
-          <span class="street-tag">Career</span>
-          <span class="street-tag">Web App</span>
-        </div>
-      </div>
-      <div class="modal-body">
-        <div class="modal-section">
-          <h3>Introduction</h3>
-          <p>The Career Guidance Web App revolutionizes career planning by using artificial intelligence to analyze users' skills, interests, and personality traits to recommend suitable career paths. The platform features a unique urban design with graffiti-inspired elements throughout the interface.</p>
-          <p>Users can create editable profiles, track their skill development over time, and connect with experienced mentors in their desired fields. The analytics dashboard visualizes career progression and identifies skill gaps with vibrant, street-art inspired data visualizations.</p>
-        </div>
-        
-        <div class="modal-section">6
-          <h3>Technology Stack</h3>
-          <div class="tech-stack">
-              <div class="tech-item">HTML</div>
-            <div class="tech-item">CSS</div>
-            <div class="tech-item">EJS</div>
-            <div class="tech-item">Node.js</div>
-            <div class="tech-item">Express</div>
-            <div class="tech-item">MongoDB</div>
-            
-           
+
+      <div class="modal-section">
+        <h3>Project Gallery</h3>
+        <div class="gallery">
+          <img src="Screenshot 2025-10-12 143417.png" alt="Home Page">
+          <img src="Screenshot 2025-10-12 143513.png" alt="Digital Health Card">
+          <img src="Screenshot 2025-10-12 143552.png" alt="Patient Dashboard">
           
-          </div>
-        </div>
-        
-        <div class="modal-section">
-          <h3>Project Gallery</h3>
-          <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Career Guidance App">
-            <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Assessment">
-            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Analytics">
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mentorship">
-          </div>
-        </div>
-        
-        
-        
-        <div class="modal-section">
-          <h3>Project Links</h3>
-          <div class="project-links">
-            <a href="https://github.com/pramila-sule-55/sveri_hakathon" class="project-btn"><i class="fab fa-github"></i> GitHub Repository</a>
-            
-           
-          </div>
         </div>
       </div>
+
+      <div class="modal-section">
+        <h3>Project Links</h3>
+        <div class="project-links">
+          <a href="https://github.com/misspramila/heathcare_digital" class="project-btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://heathcare-digital.vercel.app/" class="project-btn" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        </div>
+      </div>
+
     </div>
   </div>
-  
-  <!-- Project 4 Modal - Added AgriHub Platform -->
-  <div id="project4" class="project-modal">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeModal('project4')">&times;</span>
-      <div class="modal-header">
-        <h2>Zippy Crafts</h2>
+</div>
+
+<!-- Modal Template: Project 2 (TruthCheck) -->
+<div id="project2" class="project-modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-modal" onclick="closeModal('project2')" aria-label="Close">&times;</button>
+
+    <div class="modal-header">
+      <h2>TruthCheck – AI Fake News Detector</h2>
+      <p>AI-driven platform to analyze and flag misinformation using NLP and source credibility checks.</p>
+      <div class="tags">
+        <span class="street-tag">TruthCheck</span>
+        <span class="street-tag">AI</span>
+        <span class="street-tag">Fake News</span>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="modal-section">
+        <h3>Introduction</h3>
+        <p>
+          TruthCheck analyzes claims and articles using Natural Language Processing, fact-check APIs and model-based classification
+          to return an authenticity score and recommended confidence. Designed for browser extensions and web dashboards to reduce virality of false claims.
+        </p>
+      </div>
+
+      <div class="modal-section">
+        <h3>Technology Stack</h3>
+        <div class="tech-stack">
+          <div class="tech-item">Python</div>
+          <div class="tech-item">Scikit-learn</div>
+          <div class="tech-item">NLP</div>
+          <div class="tech-item">Flask</div>
+          <div class="tech-item">Firebase</div>
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <h3>Project Gallery</h3>
+        <div class="gallery">
+          <img src="Screenshot 2025-11-22 151909.png" alt="TruthCheck Home">
+          <img src="Screenshot 2025-11-22 214124.png" alt="Result Page">
+          <img src="Screenshot 2025-11-22 214246.png" alt="Dashboard">
+          
+        </div>
+      </div>
+
+      <div class="modal-section">
+        <h3>Project Links</h3>
+        <div class="project-links">
+          <a href="https://github.com/misspramila/Truth" class="project-btn" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://truth-ud5o.vercel.app/" class="project-btn" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Project 3 (Zippy Crafts) -->
+<div id="project3" class="project-modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-modal" onclick="closeModal('project3')" aria-label="Close">&times;</button>
+
+    <div class="modal-header">
+     <h2>Zippy Crafts</h2>
         <p>Zippy Crafts is an online marketplace for unique, handmade products that connect artisans with customers who value creativity and craftsmanship.</p>
         <div class="tags">
           <span class="street-tag">Zippy</span>
@@ -400,10 +371,7 @@ It empowers local crafters and small-scale artists by providing them with a digi
 The platform features a wide range of unique items including home décor, accessories, gifts, and eco-friendly crafts.
 With a focus on creativity, authenticity, and sustainability, Zippy Crafts celebrates the art of handwork.
 Whether you're a buyer seeking something special or a maker ready to showcase your talent, Zippy Crafts is your go-to destination.</p>
-         
-        </div>
-        
-        <div class="modal-section">
+         <div class="modal-section">
           <h3>Technology Stack</h3>
           <div class="tech-stack">
             <div class="tech-item">HTML</div>
@@ -433,55 +401,189 @@ Whether you're a buyer seeking something special or a maker ready to showcase yo
             <a href="https://github.com/pramila-sule-55/CodeAlpha._Makers-Marketplace1" class="project-btn"><i class="fab fa-github"></i> GitHub Repository</a>
             <a href="https://chic-kleicha-96adb4.netlify.app/" class="project-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
           </div>
+
         </div>
+
       </div>
+
     </div>
   </div>
+</div>
 
-  <script>
-    // Open project modal
-    function openProject(projectId) {
-      document.getElementById(projectId).style.display = 'block';
-      document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
-    
-    // Close project modal
-    function closeModal(projectId) {
-      document.getElementById(projectId).style.display = 'none';
-      document.body.style.overflow = 'auto'; // Restore scrolling
-    }
-    
-    // Close modal when clicking outside the content
-    window.onclick = function(event) {
-      const modals = document.querySelectorAll('.project-modal');
-      modals.forEach(modal => {
-        if (event.target === modal) {
-          modal.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      });
-    }
-    
-    // Play video function for SmartGas Guardian
-    function playVideo() {
-      document.getElementById('videoPlaceholder').style.display = 'none';
-      var video = document.getElementById('demoVideo');
-      video.style.display = 'block';
-      video.play();
-    }
-    
-    // Apply fade-in animation to elements
-    document.addEventListener('DOMContentLoaded', function() {
-      const fadeElements = document.querySelectorAll('.fade-in');
-      fadeElements.forEach(el => {
-        el.style.opacity = 0;
-        setTimeout(() => {
-          el.style.opacity = 1;
-        }, 100);
-      });
-    });
-  </script>
+<!-- Modal: Project 4 (SmartGas Guardian) -->
+<div id="project4" class="project-modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-modal" onclick="closeModal('project4')" aria-label="Close">&times;</button>
 
+    <div class="modal-header">
+      <h2>SmartGas Guardian</h2>
+        <p>An IoT-based safety solution with urban design aesthetics</p>
+        <div class="tags">
+          <span class="street-tag">IoT</span>
+          <span class="street-tag">Safety</span>
+          <span class="street-tag">Hardware</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Introduction</h3>
+          <p>SmartGas Guardian is a life-saving IoT device designed for home and industrial safety with an urban, street-inspired design language. It continuously monitors for dangerous levels of combustible gases and rapid temperature increases that may indicate a fire.</p>
+          <p>When a threat is detected, the system automatically shuts off the main gas supply valve and sends immediate alerts to homeowners via SMS and mobile app notifications. The project features a custom-designed enclosure with graffiti-inspired artwork, making safety technology visually appealing.</p>
+        </div>
+<div class="modal-section">
+          <h3>Technology Stack</h3>
+          <div class="tech-stack">
+            <div class="tech-item">Arduino</div>
+            <div class="tech-item">MQ-2 Gas Sensor</div>
+            <div class="tech-item">Flame Sensor</div>
+            <div class="tech-item">SIM800L GSM Module</div>
+            <div class="tech-item">Python</div>
+            <div class="tech-item">Firebase</div>
+            <div class="tech-item">React Native</div>
+            <div class="tech-item">Raspberry Pi</div>
+            <div class="tech-item">IoT Protocols</div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Project Gallery</h3>
+          <div class="gallery">
+              <img src="lpg.jpg" alt="Sensor Detail">
+            <img src="WhatsApp Image 2025-07-27 at 20.05.16_58cef4a3.jpg" alt="Sensor Detail">
+            <img src="WhatsApp Image 2025-07-27 at 20.05.15_777f87ce.jpg" alt="Circuit Design">
+            <img src="WhatsApp Image 2025-07-27 at 20.05.16_0ad4f791.jpg" alt="Mobile App">
+          </div>
+        </div>
+   <div class="modal-section">
+          <h3>Project Links</h3>
+          <div class="project-links">
+            
+            <a href="iot.pdf" class="project-btn"><i class="fas fa-file-pdf"></i> Documentation</a>
+          </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Project 5 (Maker's Marketplace) -->
+<div id="project5" class="project-modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-modal" onclick="closeModal('project5')" aria-label="Close">&times;</button>
+
+    <div class="modal-header">
+      <h2>Maker's Marketplace</h2>
+        <p>An e-commerce platform designed to empower local artisans with street art-inspired design</p>
+        <div class="tags">
+          <span class="street-tag">E-commerce</span>
+          <span class="street-tag">Urban Design</span>
+          <span class="street-tag">Community</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Introduction</h3>
+          <p>Maker's Marketplace is a vibrant e-commerce platform that connects artisans with buyers who appreciate handcrafted goods. Designed with an urban, street art aesthetic, the platform features secure user authentication, product management tools for sellers, and a seamless shopping experience.</p>
+          <p>The project combines functionality with artistic expression, featuring graffiti-inspired elements and a color palette that reflects the creativity of the artisan community. The platform includes real-time inventory tracking, seller analytics dashboards, and integrated payment processing.</p>
+        </div>
+<div class="modal-section">
+          <h3>Technology Stack</h3>
+          <div class="tech-stack">
+            <div class="tech-item">React.js</div>
+            <div class="tech-item">Firebase</div>
+            <div class="tech-item">Firestore</div>
+            <div class="tech-item">Netlify</div>
+          </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Project Gallery</h3>
+          <div class="gallery">
+            <img src="market.jpg" alt="Maker's Marketplace">
+            <img src="market2.jpg" alt="Product Page">
+            <img src="list.jpg" alt="Dashboard">
+            <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Checkout">
+          </div>
+        </div>
+        
+
+        
+        
+        <div class="modal-section">
+          <h3>Project Links</h3>
+          <div class="project-links">
+            <a href="https://github.com/Pratiksha091920/MakersMarketPlace" class="project-btn"><i class="fab fa-github"></i> GitHub Repository</a>
+      
+          </div>
+        </div>
+ </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Project 6 (Career Guidance App) -->
+<div id="project6" class="project-modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="close-modal" onclick="closeModal('project6')" aria-label="Close">&times;</button>
+
+    <div class="modal-header">
+      <h2>Career Guidance Web App</h2>
+        <p>AI-powered career platform with street art design elements</p>
+        <div class="tags">
+          <span class="street-tag">AI</span>
+          <span class="street-tag">Career</span>
+          <span class="street-tag">Web App</span>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Introduction</h3>
+          <p>The Career Guidance Web App revolutionizes career planning by using artificial intelligence to analyze users' skills, interests, and personality traits to recommend suitable career paths. The platform features a unique urban design with graffiti-inspired elements throughout the interface.</p>
+          <p>Users can create editable profiles, track their skill development over time, and connect with experienced mentors in their desired fields. The analytics dashboard visualizes career progression and identifies skill gaps with vibrant, street-art inspired data visualizations.</p>
+        </div>
+        
+        <div class="modal-section">6
+          <h3>Technology Stack</h3>
+          <div class="tech-stack">
+              <div class="tech-item">HTML</div>
+            <div class="tech-item">CSS</div>
+            <div class="tech-item">EJS</div>
+            <div class="tech-item">Node.js</div>
+            <div class="tech-item">Express</div>
+            <div class="tech-item">MongoDB</div>
+ </div>
+        </div>
+        
+        <div class="modal-section">
+          <h3>Project Gallery</h3>
+          <div class="gallery">
+            <img src="career.png" alt="Career Guidance App">
+            
+        </div>
+        
+        
+        
+        <div class="modal-section">
+          <h3>Project Links</h3>
+          <div class="project-links">
+            <a href="https://github.com/pramila-sule-55/sveri_hakathon" class="project-btn"><i class="fab fa-github"></i> GitHub Repository</a>
+    
+        </div>
+        </div>
+        </div>
+       
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+ 
   <!-- Experience Section -->
   <section id="experience" class="section">
     <div class="container">
@@ -522,7 +624,9 @@ Whether you're a buyer seeking something special or a maker ready to showcase yo
         <h2>My Certificates</h2>
         <p>Professional certifications and achievements</p>
       </div>
-      
+
+       
+
       <div class="cert-grid">
         <div class="cert-card fade-in">
           <img src="java_certificate.jpg" alt="Certificate" width="1200">
@@ -563,7 +667,7 @@ Whether you're a buyer seeking something special or a maker ready to showcase yo
         </a>
 
         <!-- Download Resume -->
-        <a href="resume (3).pdf" download class="cta-btn">
+        <a href="pramila_sule_resume (2).pdf" download class="cta-btn">
           <i class="fas fa-download"></i> Download Resume
         </a>
       </div>

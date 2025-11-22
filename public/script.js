@@ -1,4 +1,53 @@
 // script.js
+
+
+// Open modal by id
+  function openProject(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.setAttribute('aria-hidden', 'false');
+    modal.style.display = 'flex';
+    // lock body scroll
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Close modal by id
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.setAttribute('aria-hidden', 'true');
+    modal.style.display = 'none';
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
+  }
+
+  // Close when user clicks outside modal-content
+  document.addEventListener('click', function(e){
+    const openModals = document.querySelectorAll('.project-modal[aria-hidden="false"]');
+    openModals.forEach(modal => {
+      const content = modal.querySelector('.modal-content');
+      if (!content) return;
+      if (!content.contains(e.target) && !e.target.matches('.project-link')) {
+        closeModal(modal.id);
+      }
+    });
+  });
+
+  // Close with ESC
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.project-modal[aria-hidden="false"]').forEach(m => closeModal(m.id));
+    }
+  });
+
+  // Make gallery images open in new tab (simple behavior)
+  document.addEventListener('click', function(e){
+    const img = e.target.closest('.gallery img');
+    if (!img) return;
+    // open large image in new tab or lightbox integration if needed
+    window.open(img.src, '_blank');
+  });
 document.addEventListener('DOMContentLoaded', function() {
   // Theme toggle functionality
   const themeToggle = document.getElementById('theme-toggle');
