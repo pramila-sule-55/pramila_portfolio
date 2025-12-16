@@ -1,197 +1,133 @@
-// script.js
+/* ===============================
+   FIREBASE (MODULE MODE)
+=============================== */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyB0dFxccwsg7TqqxlmckgyS6MWpIHOKAVg",
+  authDomain: "portfoliocontactform-3464c.firebaseapp.com",
+  databaseURL: "https://portfoliocontactform-3464c-default-rtdb.firebaseio.com",
+  projectId: "portfoliocontactform-3464c",
+  storageBucket: "portfoliocontactform-3464c.appspot.com",
+  messagingSenderId: "338733918049",
+  appId: "1:338733918049:web:0b08caa8aec596b2098720"
+};
 
-// Open modal by id
-  function openProject(id) {
-    const modal = document.getElementById(id);
-    if (!modal) return;
-    modal.setAttribute('aria-hidden', 'false');
-    modal.style.display = 'flex';
-    // lock body scroll
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+/* ===============================
+   DOM READY
+=============================== */
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===== THEME TOGGLE ===== */
+  const themeToggle = document.getElementById("theme-toggle");
+
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+    themeToggle.textContent = "☀️";
   }
 
-  // Close modal by id
-  function closeModal(id) {
-    const modal = document.getElementById(id);
-    if (!modal) return;
-    modal.setAttribute('aria-hidden', 'true');
-    modal.style.display = 'none';
-    document.documentElement.style.overflow = '';
-    document.body.style.overflow = '';
-  }
-
-  // Close when user clicks outside modal-content
-  document.addEventListener('click', function(e){
-    const openModals = document.querySelectorAll('.project-modal[aria-hidden="false"]');
-    openModals.forEach(modal => {
-      const content = modal.querySelector('.modal-content');
-      if (!content) return;
-      if (!content.contains(e.target) && !e.target.matches('.project-link')) {
-        closeModal(modal.id);
-      }
-    });
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.contains("dark");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 
-  // Close with ESC
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.project-modal[aria-hidden="false"]').forEach(m => closeModal(m.id));
-    }
+  /* ===== NAVBAR SCROLL EFFECT ===== */
+  const navbar = document.querySelector(".navbar");
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 100);
   });
 
-  // Make gallery images open in new tab (simple behavior)
-  document.addEventListener('click', function(e){
-    const img = e.target.closest('.gallery img');
-    if (!img) return;
-    // open large image in new tab or lightbox integration if needed
-    window.open(img.src, '_blank');
-  });
-document.addEventListener('DOMContentLoaded', function() {
-  // Theme toggle functionality
-  const themeToggle = document.getElementById('theme-toggle');
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-theme');
-    themeToggle.textContent = document.body.classList.contains('light-theme') ? '☀️' : '🌙';
-  });
-
-  // Scroll animations
-  const fadeElements = document.querySelectorAll('.fade-in');
-  
-  const appearOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-  };
-  
-  const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('appear');
-      appearOnScroll.unobserve(entry.target);
-    });
-  }, appearOptions);
-  
-  fadeElements.forEach(element => {
-    appearOnScroll.observe(element);
-  });
-
-  // Navbar scroll effect
-  const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-
-  // Initialize skill bars after they appear
-  const skillBars = document.querySelectorAll('.skill-bar .progress div');
-  
-  const skillBarObserver = new IntersectionObserver((entries) => {
+  /* ===== FADE-IN ON SCROLL ===== */
+  const fadeEls = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const width = entry.target.parentElement.previousElementSibling.textContent;
-        const percentage = {
-          'HTML': '90%',
-          'CSS': '85%',
-          'JavaScript': '80%',
-          'Node.js': '75%',
-          'MongoDB': '70%',
-          'React': '65%'
-        }[width];
-        
-        if (percentage) {
-          entry.target.style.width = percentage;
-        }
-        skillBarObserver.unobserve(entry.target);
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
-  
-  skillBars.forEach(bar => {
-    skillBarObserver.observe(bar);
-  });
-  
-  // Form submission
-  const contactForm = document.getElementById('contact-form');
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for your message! I will get back to you soon.');
-    contactForm.reset();
-  });
-});
+  }, { threshold: 0.2 });
 
+  fadeEls.forEach(el => observer.observe(el));
 
-    function playVideo() {
-        const video = document.getElementById('demoVideo');
-        const placeholder = document.querySelector('.video-placeholder');
-
-        placeholder.style.display = 'none';   // Hide play icon and text
-        video.style.display = 'block';        // Show the video
-        video.play();                         // Play video
-    }
-
-
-    
-  // Import Firebase core and Realtime Database
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-
-  // Your Firebase config
-  const firebaseConfig = {
-    apiKey: "AIzaSyB0dFxccwsg7TqqxlmckgyS6MWpIHOKAVg",
-    authDomain: "portfoliocontactform-3464c.firebaseapp.com",
-    databaseURL: "https://portfoliocontactform-3464c-default-rtdb.firebaseio.com",
-    projectId: "portfoliocontactform-3464c",
-    storageBucket: "portfoliocontactform-3464c.appspot.com",
-    messagingSenderId: "338733918049",
-    appId: "1:338733918049:web:0b08caa8aec596b2098720",
-    measurementId: "G-SRB8CWR8P1"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);  // ✅ This enables database access
-
-  // Handle form submission
-  document.getElementById("contact-form").addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    // Get form values
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const phone = document.getElementById("contact").value;
-    const message = document.getElementById("message").value;
-
-    // Create a new entry in database
-    const newMessageRef = push(ref(db, "contactMessages"));
-    set(newMessageRef, {
-      name: name,
-      email: email,
-      phone: phone,
-      message: message
-    })
-    .then(() => {
-      alert("Message sent successfully!");
-      document.getElementById("contact-form").reset();
-    })
-    .catch((error) => {
-      alert("Error: " + error.message);
+  /* ===== SMOOTH SCROLL ===== */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", e => {
+      e.preventDefault();
+      const target = document.querySelector(anchor.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     });
   });
 
-  
+  /* ===== CONTACT FORM (FIREBASE) ===== */
+  const form = document.getElementById("contact-form");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
 
+    const data = {
+      name: document.getElementById("name").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      phone: document.getElementById("contact").value.trim(),
+      message: document.getElementById("message").value.trim(),
+      timestamp: Date.now()
+    };
 
+    push(ref(db, "contactMessages"), data)
+      .then(() => {
+        alert("Message sent successfully!");
+        form.reset();
+      })
+      .catch(err => alert(err.message));
+  });
+
+});
+
+/* ===============================
+   PROJECT MODAL FUNCTIONS
+   (GLOBAL – REQUIRED)
+=============================== */
+window.openProject = function (id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+
+  modal.style.display = "flex";
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+};
+
+window.closeModal = function (id) {
+  const modal = document.getElementById(id);
+  if (!modal) return;
+
+  modal.style.display = "none";
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+};
+
+/* ===== CLOSE MODAL BY CLICKING BACKGROUND ===== */
+document.addEventListener("click", e => {
+  if (e.target.classList.contains("project-modal")) {
+    e.target.style.display = "none";
+    e.target.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+});
+
+/* ===== CLOSE MODAL WITH ESC ===== */
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".project-modal").forEach(m => {
+      m.style.display = "none";
+      m.setAttribute("aria-hidden", "true");
+    });
+    document.body.style.overflow = "";
+  }
+});
